@@ -15,8 +15,8 @@
     </h2>
   </header>
 
-  <section>
-    <input type="number" name="minimalIssues" #minimalIssues id="">
+  <section *ngIf="filteredFileContent" class="filter">
+    <input type="number" class="issues-amount" name="minimalIssues" [ngModel]="minimalIssues" (ngModelChange)="updateMinimalIssues($event)">
     <button (click)="filterOnIssueCount()" >Filter</button>
   </section>
 
